@@ -261,3 +261,7 @@ hr {
   font-size: var(--font-medium);
   cursor: pointer;
 }
+
+.inner-container-2 button:hover {
+  color: #fff;
+}
