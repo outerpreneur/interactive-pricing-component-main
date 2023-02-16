@@ -26,7 +26,7 @@
 
 main {
   background-color: var(--Very-Pale-Blue-Main-Background);
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(./images/bg-pattern.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -38,6 +38,8 @@ main {
 .wrapper {
   width: 38.2%;
 }
+
+/* content  */
 
 .top-container {
   background-image: url(./images/pattern-circles.svg);
@@ -53,6 +55,7 @@ main {
 
 .top-container h2 {
   font-size: 1em;
+  color: var(--Grayish-Blue-Text);
 }
 
 .container {
@@ -264,4 +267,50 @@ hr {
 
 .inner-container-2 button:hover {
   color: #fff;
+}
+
+/* responsive styles */
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 90%;
+  }
+  .top-container {
+    text-align: center;
+  }
+  .top-container h1 {
+    font-size: 1.2em;
+  }
+  .top-container h2 {
+    font-size: 1em;
+    font-weight: 400;
+  }
+  .inner-container-1 {
+    grid-template-areas:
+      "area1"
+      "area3"
+      "area2"
+      "area4";
+    text-align: center;
+    margin: 0 auto;
+    padding: 2em;
+  }
+  .billing-interval {
+    width: 100%;
+    justify-self: center;
+  }
+  .price {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .inner-container-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+  .features {
+    text-align: center;
+  }
+  .inner-container-2 button {
+    margin-bottom: 1.5em;
+  }
 }
