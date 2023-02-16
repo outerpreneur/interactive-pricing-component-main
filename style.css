@@ -115,7 +115,13 @@ main {
   width: 100%; /* Full-width */
   height: 10px;
   border-radius: 10px;
-  background: #d3d3d3; /* Grey background */
+  background: linear-gradient(
+    to right,
+    var(--Soft-Cyan-Full-Slider-Bar) 0%,
+    var(--Soft-Cyan-Full-Slider-Bar) 50%,
+    #d3d3d3 50%,
+    #d3d3d3 100%
+  );
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
@@ -124,7 +130,7 @@ main {
 
 .billing-interval {
   grid-area: area4;
-  width: 76%;
+  width: 80%;
   justify-self: end;
 }
 
@@ -303,7 +309,7 @@ hr {
       "area4";
     text-align: center;
     margin: 0 auto;
-    padding: 1.5em;
+    padding: 1em;
   }
   .billing-interval {
     width: 100%;
