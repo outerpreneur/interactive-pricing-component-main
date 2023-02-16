@@ -45,7 +45,8 @@ main {
   background-image: url(./images/pattern-circles.svg);
   background-repeat: no-repeat;
   background-position: center;
-  padding: 5em;
+  text-align: center;
+  padding: 5em 3em;
   color: var(--Dark-Desaturated-Blue-Text-CTA-Background);
 }
 
