@@ -272,11 +272,15 @@ hr {
 /* responsive styles */
 
 @media (max-width: 800px) {
+  main {
+    min-width: none;
+  }
   .wrapper {
     width: 90%;
   }
   .top-container {
     text-align: center;
+    padding: 3.5em;
   }
   .top-container h1 {
     font-size: 1.2em;
