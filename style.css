@@ -303,10 +303,15 @@ hr {
   .billing-interval {
     width: 100%;
     justify-self: center;
+    font-size: 0.9em;
   }
   .price {
     text-align: center;
     margin-bottom: 1em;
+  }
+  .switch {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
   }
   .discount-tag {
     display: none;
