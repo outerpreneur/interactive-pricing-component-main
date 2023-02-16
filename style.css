@@ -274,6 +274,7 @@ hr {
 @media (max-width: 800px) {
   main {
     min-width: none;
+    background-size: 300%;
   }
   .wrapper {
     width: 90%;
