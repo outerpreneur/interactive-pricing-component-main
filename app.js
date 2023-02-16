@@ -14,8 +14,15 @@ let moneySlider = document.querySelector(".money-slider");
 const switchPeriod = document.querySelector(".switch");
 const time = document.querySelector(".time");
 
-let pageView = ["10K", "50K", "100K", "500K", "1M"];
+let pageView = [
+  "10K pageviews",
+  "50K pageviews",
+  "100K pageviews",
+  "500K pageviews",
+  "1M pageviews",
+];
 let perMonth = ["$8", "$12", "$16", "$24", "$36"];
+let perYear = ["$72", "$108", "$144", "$206", "$288"];
 let isYearly = false;
 
 switchPeriod.addEventListener("change", () => {
@@ -39,48 +46,48 @@ moneySlider.addEventListener("change", () => {
 function updateValue() {
   if (isYearly == false) {
     switch (moneySlider.value) {
+      case "0":
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perMonth[moneySlider.value];
+        break;
       case "1":
-        pageViews.innerHTML = "10K pageviews";
-        priceNumberPerMonth.innerHTML = "$8";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perMonth[moneySlider.value];
         break;
       case "2":
-        pageViews.innerHTML = "50K pageviews";
-        priceNumberPerMonth.innerHTML = "$12";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perMonth[moneySlider.value];
         break;
       case "3":
-        pageViews.innerHTML = "100K pageviews";
-        priceNumberPerMonth.innerHTML = "$16";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perMonth[moneySlider.value];
         break;
       case "4":
-        pageViews.innerHTML = "500K pageviews";
-        priceNumberPerMonth.innerHTML = "$24";
-        break;
-      case "5":
-        pageViews.innerHTML = "1M pageviews";
-        priceNumberPerMonth.innerHTML = "$36";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perMonth[moneySlider.value];
         break;
     }
   } else {
     switch (moneySlider.value) {
+      case "0":
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perYear[moneySlider.value];
+        break;
       case "1":
-        pageViews.innerHTML = "10K pageviews";
-        priceNumberPerMonth.innerHTML = "$72";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perYear[moneySlider.value];
         break;
       case "2":
-        pageViews.innerHTML = "50K pageviews";
-        priceNumberPerMonth.innerHTML = "$108";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perYear[moneySlider.value];
         break;
       case "3":
-        pageViews.innerHTML = "100K pageviews";
-        priceNumberPerMonth.innerHTML = "$144";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perYear[moneySlider.value];
         break;
       case "4":
-        pageViews.innerHTML = "500K pageviews";
-        priceNumberPerMonth.innerHTML = "$206";
-        break;
-      case "5":
-        pageViews.innerHTML = "1M pageviews";
-        priceNumberPerMonth.innerHTML = "$288";
+        pageViews.innerHTML = pageView[moneySlider.value];
+        priceNumberPerMonth.innerHTML = perYear[moneySlider.value];
         break;
     }
   }
@@ -89,7 +96,7 @@ function updateValue() {
 function updateProgressBar() {
   let sliderValue = parseFloat(moneySlider.value);
   switch (sliderValue) {
-    case 1:
+    case 0:
       moneySlider.style.background = `linear-gradient(
             to right,
             var(--Soft-Cyan-Full-Slider-Bar) 0%,
@@ -97,7 +104,7 @@ function updateProgressBar() {
             #d3d3d3 0%,
             #d3d3d3 100%)`;
       break;
-    case 2:
+    case 1:
       moneySlider.style.background = `linear-gradient(
             to right,
             var(--Soft-Cyan-Full-Slider-Bar) 0%,
@@ -105,7 +112,7 @@ function updateProgressBar() {
             #d3d3d3 25%,
             #d3d3d3 100%)`;
       break;
-    case 3:
+    case 2:
       moneySlider.style.background = `linear-gradient(
         to right,
         var(--Soft-Cyan-Full-Slider-Bar) 0%,
@@ -113,7 +120,7 @@ function updateProgressBar() {
         #d3d3d3 50%,
         #d3d3d3 100%)`;
       break;
-    case 4:
+    case 3:
       moneySlider.style.background = `linear-gradient(
         to right,
         var(--Soft-Cyan-Full-Slider-Bar) 0%,
@@ -121,7 +128,7 @@ function updateProgressBar() {
         #d3d3d3 75%,
         #d3d3d3 100%)`;
       break;
-    case 5:
+    case 4:
       moneySlider.style.background = `linear-gradient(
         to right,
         var(--Soft-Cyan-Full-Slider-Bar) 0%,
