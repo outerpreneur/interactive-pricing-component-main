@@ -40,7 +40,7 @@ switchPeriod.addEventListener("change", () => {
 moneySlider.addEventListener("change", () => {
   console.log("work?");
   updateValue();
-  updateProgressBar();
+  updateProgressBar2();
 });
 
 function updateValue() {
@@ -93,50 +93,63 @@ function updateValue() {
   }
 }
 
-function updateProgressBar() {
+// function updateProgressBar() {
+//   let sliderValue = parseFloat(moneySlider.value);
+//   switch (sliderValue) {
+//     case 0:
+//       moneySlider.style.background = `linear-gradient(
+//             to right,
+//             var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//             var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//             #d3d3d3 0%,
+//             #d3d3d3 100%)`;
+//       break;
+//     case 1:
+//       moneySlider.style.background = `linear-gradient(
+//             to right,
+//             var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//             var(--Soft-Cyan-Full-Slider-Bar) 25%,
+//             #d3d3d3 25%,
+//             #d3d3d3 100%)`;
+//       break;
+//     case 2:
+//       moneySlider.style.background = `linear-gradient(
+//         to right,
+//         var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//         var(--Soft-Cyan-Full-Slider-Bar) 50%,
+//         #d3d3d3 50%,
+//         #d3d3d3 100%)`;
+//       break;
+//     case 3:
+//       moneySlider.style.background = `linear-gradient(
+//         to right,
+//         var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//         var(--Soft-Cyan-Full-Slider-Bar) 75%,
+//         #d3d3d3 75%,
+//         #d3d3d3 100%)`;
+//       break;
+//     case 4:
+//       moneySlider.style.background = `linear-gradient(
+//         to right,
+//         var(--Soft-Cyan-Full-Slider-Bar) 0%,
+//         var(--Soft-Cyan-Full-Slider-Bar) 100%,
+//         #d3d3d3 100%,
+//         #d3d3d3 100%)`;
+//       break;
+//     default:
+//       break;
+//   }
+// }
+
+function updateProgressBar2() {
   let sliderValue = parseFloat(moneySlider.value);
-  switch (sliderValue) {
-    case 0:
-      moneySlider.style.background = `linear-gradient(
-            to right,
-            var(--Soft-Cyan-Full-Slider-Bar) 0%,
-            var(--Soft-Cyan-Full-Slider-Bar) 0%,
-            #d3d3d3 0%,
-            #d3d3d3 100%)`;
-      break;
-    case 1:
-      moneySlider.style.background = `linear-gradient(
-            to right,
-            var(--Soft-Cyan-Full-Slider-Bar) 0%,
-            var(--Soft-Cyan-Full-Slider-Bar) 25%,
-            #d3d3d3 25%,
-            #d3d3d3 100%)`;
-      break;
-    case 2:
-      moneySlider.style.background = `linear-gradient(
-        to right,
-        var(--Soft-Cyan-Full-Slider-Bar) 0%,
-        var(--Soft-Cyan-Full-Slider-Bar) 50%,
-        #d3d3d3 50%,
-        #d3d3d3 100%)`;
-      break;
-    case 3:
-      moneySlider.style.background = `linear-gradient(
-        to right,
-        var(--Soft-Cyan-Full-Slider-Bar) 0%,
-        var(--Soft-Cyan-Full-Slider-Bar) 75%,
-        #d3d3d3 75%,
-        #d3d3d3 100%)`;
-      break;
-    case 4:
-      moneySlider.style.background = `linear-gradient(
-        to right,
-        var(--Soft-Cyan-Full-Slider-Bar) 0%,
-        var(--Soft-Cyan-Full-Slider-Bar) 100%,
-        #d3d3d3 100%,
-        #d3d3d3 100%)`;
-      break;
-    default:
-      break;
-  }
+  const maxValue = 4;
+  let progressPercentage = (sliderValue / maxValue) * 100;
+  console.log(progressPercentage);
+  moneySlider.style.background = `linear-gradient(
+    to right,
+    var(--Soft-Cyan-Full-Slider-Bar) 0%,
+    var(--Soft-Cyan-Full-Slider-Bar) ${progressPercentage}%,
+    #d3d3d3 ${progressPercentage}%,
+    #d3d3d3 100%)`;
 }
