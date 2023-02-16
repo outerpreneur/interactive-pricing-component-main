@@ -10,7 +10,7 @@
 
 const pageViews = document.querySelector(".pageviews");
 const priceNumberPerMonth = document.querySelector(".price-number");
-const moneySlider = document.querySelector(".money-slider");
+let moneySlider = document.querySelector(".money-slider");
 const switchPeriod = document.querySelector(".switch");
 const time = document.querySelector(".time");
 
@@ -33,6 +33,7 @@ switchPeriod.addEventListener("change", () => {
 moneySlider.addEventListener("change", () => {
   console.log("work?");
   updateValue();
+  updateProgressBar();
 });
 
 function updateValue() {
@@ -82,5 +83,53 @@ function updateValue() {
         priceNumberPerMonth.innerHTML = "$288";
         break;
     }
+  }
+}
+
+function updateProgressBar() {
+  let sliderValue = parseFloat(moneySlider.value);
+  switch (sliderValue) {
+    case 1:
+      moneySlider.style.background = `linear-gradient(
+            to right,
+            var(--Soft-Cyan-Full-Slider-Bar) 0%,
+            var(--Soft-Cyan-Full-Slider-Bar) 0%,
+            #d3d3d3 0%,
+            #d3d3d3 100%)`;
+      break;
+    case 2:
+      moneySlider.style.background = `linear-gradient(
+            to right,
+            var(--Soft-Cyan-Full-Slider-Bar) 0%,
+            var(--Soft-Cyan-Full-Slider-Bar) 25%,
+            #d3d3d3 25%,
+            #d3d3d3 100%)`;
+      break;
+    case 3:
+      moneySlider.style.background = `linear-gradient(
+        to right,
+        var(--Soft-Cyan-Full-Slider-Bar) 0%,
+        var(--Soft-Cyan-Full-Slider-Bar) 50%,
+        #d3d3d3 50%,
+        #d3d3d3 100%)`;
+      break;
+    case 4:
+      moneySlider.style.background = `linear-gradient(
+        to right,
+        var(--Soft-Cyan-Full-Slider-Bar) 0%,
+        var(--Soft-Cyan-Full-Slider-Bar) 75%,
+        #d3d3d3 75%,
+        #d3d3d3 100%)`;
+      break;
+    case 5:
+      moneySlider.style.background = `linear-gradient(
+        to right,
+        var(--Soft-Cyan-Full-Slider-Bar) 0%,
+        var(--Soft-Cyan-Full-Slider-Bar) 100%,
+        #d3d3d3 100%,
+        #d3d3d3 100%)`;
+      break;
+    default:
+      break;
   }
 }

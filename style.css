@@ -117,10 +117,10 @@ main {
   border-radius: 10px;
   background: linear-gradient(
     to right,
-    var(--Soft-Cyan-Full-Slider-Bar) 0%,
+    var(--Soft-Cyan-Full-Slider-Bar) 0,
     var(--Soft-Cyan-Full-Slider-Bar) 50%,
-    #d3d3d3 50%,
-    #d3d3d3 100%
+    var(--Light-Grayish-Blue-Empty-Slider-Bar) 50%,
+    var(--Light-Grayish-Blue-Empty-Slider-Bar) 100%
   );
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
