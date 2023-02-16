@@ -82,12 +82,16 @@ main {
   font-weight: 600;
   font-size: 1.1em;
   margin: 0;
-  padding: 0.7em 0;
+  align-self: center;
   letter-spacing: 2px;
 }
 
 .price {
   grid-area: area2;
+  justify-self: end;
+}
+
+.price-number {
   font-size: 2.7em;
   color: var(--Dark-Desaturated-Blue-Text-CTA-Background);
   margin: 0;
@@ -271,7 +275,7 @@ hr {
 
 /* responsive styles */
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   main {
     min-width: none;
     background-size: 300%;
@@ -298,7 +302,7 @@ hr {
       "area4";
     text-align: center;
     margin: 0 auto;
-    padding: 2em;
+    padding: 1.5em;
   }
   .billing-interval {
     width: 100%;
@@ -307,6 +311,7 @@ hr {
   }
   .price {
     text-align: center;
+    justify-self: center;
     margin-bottom: 1em;
   }
   .switch {
