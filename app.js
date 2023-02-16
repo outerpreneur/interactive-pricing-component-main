@@ -17,19 +17,25 @@ const time = document.querySelector(".time");
 let pageView = ["10K", "50K", "100K", "500K", "1M"];
 let perMonth = ["$8", "$12", "$16", "$24", "$36"];
 let isYearly = false;
-console.log(isYearly);
 
 switchPeriod.addEventListener("change", () => {
   if (isYearly === true) {
     isYearly = false;
     time.innerHTML = "/ month";
+    updateValue();
   } else {
     isYearly = true;
     time.innerHTML = "/ year";
+    updateValue();
   }
 });
 
 moneySlider.addEventListener("change", () => {
+  console.log("work?");
+  updateValue();
+});
+
+function updateValue() {
   if (isYearly == false) {
     switch (moneySlider.value) {
       case "1":
@@ -77,4 +83,4 @@ moneySlider.addEventListener("change", () => {
         break;
     }
   }
-});
+}
